@@ -1,0 +1,82 @@
+// ============================================================================
+// DER del modelo ACTUAL (el que se entrega para la prueba)
+// Pegar en https://dbdiagram.io para visualizar.
+// Nota: las relaciones se dibujan como referencias lógicas; en la base de
+// datos NO existen llaves foráneas declaradas.
+// ============================================================================
+
+Table centros_votacion {
+  id_centro integer [pk, increment]
+  codigo_centro_votacion varchar(50)
+  nombre_centro varchar(255)
+  direccion varchar(255)
+  codigo_departamento varchar(50)
+  nombre_departamento varchar(255)
+  codigo_municipio varchar(50)
+  nombre_municipio varchar(255)
+  zona varchar(50)
+  area varchar(50)
+  latitud varchar(50)
+  longitud varchar(50)
+  cantidad_mesas varchar(50)
+  capacidad_maxima varchar(50)
+  anio_vigencia varchar(50)
+  fechaCarga varchar(50)
+}
+
+Table mesas_votacion {
+  id_mesa integer [pk, increment]
+  codigo_mesa varchar(50)
+  codigo_centro_votacion varchar(50)
+  numero_mesa varchar(50)
+  fechaCarga varchar(50)
+}
+
+Table resultados_elecciones {
+  id_resultado integer [pk, increment]
+  anio_eleccion varchar(50)
+  tipo_eleccion varchar(50)
+  vuelta varchar(50)
+  codigo_departamento varchar(50)
+  nombre_departamento varchar(255)
+  codigo_municipio varchar(50)
+  nombre_municipio varchar(255)
+  codigo_centro_votacion varchar(50)
+  codigo_mesa varchar(50)
+  partido varchar(255)
+  candidato varchar(255)
+  votos_validos varchar(50)
+  votos_nulos varchar(50)
+  votos_en_blanco varchar(50)
+  total_empadronados_mesa varchar(50)
+  total_votantes_mesa varchar(50)
+  fechaCarga varchar(50)
+}
+
+Table empadronados {
+  id_empadronado varchar(50) [pk]
+  codigo_centro_votacion varchar(50)
+  codigo_mesa varchar(50)
+  rango_edad varchar(50)
+  sexo varchar(50)
+  codigo_departamento_residencia varchar(50)
+  codigo_municipio_residencia varchar(50)
+  estado_registro varchar(50)
+  fecha_inscripcion varchar(50)
+  fecha_ultima_actualizacion varchar(50)
+  created_at timestamp
+}
+
+Table carga_log {
+  id_log integer [pk, increment]
+  proceso varchar(255)
+  observacion varchar(255)
+  fecha varchar(50)
+}
+
+// Relaciones lógicas (no existen como FK en la base de datos)
+Ref: mesas_votacion.codigo_centro_votacion > centros_votacion.codigo_centro_votacion
+Ref: resultados_elecciones.codigo_mesa > mesas_votacion.codigo_mesa
+Ref: resultados_elecciones.codigo_centro_votacion > centros_votacion.codigo_centro_votacion
+Ref: empadronados.codigo_mesa > mesas_votacion.codigo_mesa
+Ref: empadronados.codigo_centro_votacion > centros_votacion.codigo_centro_votacion

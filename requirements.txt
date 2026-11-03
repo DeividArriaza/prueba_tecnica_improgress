@@ -1,0 +1,7 @@
+# Dependencias base del template. Puedes agregar o cambiar librerías,
+# documentando el porqué en DECISIONES.md
+psycopg2-binary==2.9.9
+pandas==2.2.2
+PyYAML==6.0.1
+python-dotenv==1.0.1
+pytest==8.2.0

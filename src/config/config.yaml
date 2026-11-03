@@ -1,0 +1,33 @@
+# ---------------------------------------------------------------------------
+# Configuración de las fuentes y los flujos.
+# La idea del template es que agregar una fuente nueva sea agregar un bloque
+# aquí, no reescribir código. Puedes extender esta estructura.
+# ---------------------------------------------------------------------------
+paths:
+  historico: data/historico
+  empadronados: data/empadronados
+
+sources:
+  centros_votacion:
+    type: csv
+    path: data/historico/centros_votacion.csv
+    load_mode: full          # carga única
+    target_table: electoral.centros_votacion
+    natural_key: [codigo_centro_votacion]
+
+  resultados_historicos:
+    type: csv
+    path: data/historico/resultados_historicos.csv
+    load_mode: full          # carga única
+    target_table: electoral.resultados_elecciones
+    natural_key: [anio_eleccion, tipo_eleccion, vuelta, codigo_mesa, partido]
+
+  empadronados:
+    type: csv
+    path_pattern: data/empadronados/empadronados_{fecha}.csv
+    load_mode: incremental   # actualización diaria
+    target_table: electoral.empadronados
+    natural_key: [id_empadronado]
+
+quality:
+  on_reject: quarantine      # quarantine | fail | skip  (decisión del candidato)
