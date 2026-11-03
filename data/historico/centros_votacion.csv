@@ -1,0 +1,99 @@
+codigo_centro_votacion,nombre_centro,direccion,codigo_departamento,nombre_departamento,codigo_municipio,nombre_municipio,zona,area,latitud,longitud,cantidad_mesas,capacidad_maxima,anio_vigencia
+0101001,"Escuela Oficial Urbana Mixta No. 1, Guatemala",18 Calle 2-85 Zona 7,01,Guatemala,0101, Guatemala ,1,urbana,14.704057,-91.641848,14,9100,2019
+0101002,"Colegio Municipal No. 2, GUATEMALA",14 Calle 4-67 Zona 10,01,GUATEMALA,0101,guatemala,5,rural,16.168277,-89.95502,6,4200,2019
+0102001,"Escuela Oficial Urbana Mixta No. 1,  Mixco",3 Calle 7-22 Zona 6,01, Guatemala ,0102,Mixco,SIN ZONA,U,14.582786,-89.146023,7,4200,2023
+0102002,"Escuela Oficial Rural Mixta No. 2, mixco",3 Calle 9-47 Zona 11,01,guatemala,0102,Mixco,,urbana,15.898535,-88.307537,14,9100,2023
+0102003,"Salon Comunal No. 3, Mixco",3 Calle 14-39 Zona 2,01,Guatemala,0102,Mixco,,rural,13.88788,-91.288407,14,8400,2023
+0102004,"Escuela Oficial Urbana Mixta No. 4, Mixco",20 Calle 11-31 Zona 9,01,Guatemala,0102,MIXCO,12,U,15.15661,-89.519299,5,3250,2019
+0102005,"Colegio Municipal No. 5, Mixco",8 Calle 11-51 Zona 1,01,Guatemala,0102, Mixco ,4,,17.757046,-89.640001,9,5850,2023
+0103001,"Salon Comunal No. 1, VILLA NUEVA",7 Calle 11-73 Zona 7,01,GUATEMALA,0103,villa nueva,,RURAL,17.443858,-89.93128,4,2400,2019
+0103002,"Colegio Municipal No. 2,  Villa Nueva",14 Calle 15-84 Zona 7,01, Guatemala ,0103,Villa Nueva,6,RURAL,16.754455,-90.044091,5,3000,2019
+0103003,"Instituto Nacional No. 3, villa nueva",14 Calle 10-18 Zona 7,01,guatemala,0103,Villa Nueva,SIN ZONA,,17.230522,-91.588635,4,2400,2023
+0103004,"Colegio Municipal No. 4, Villa Nueva",9 Calle 13-92 Zona 6,01,Guatemala,0103,Villa Nueva,,RURAL,"16,489162",-91.741793,11,6600,2023
+0103005,"Salon Comunal No. 5, Villa Nueva",17 Calle 13-32 Zona 9,01,Guatemala,0103,VILLA NUEVA,SIN ZONA,Urbana,17.610645,-88.696588,10,6000,2023
+0104001,"Colegio Municipal No. 1, San Miguel Petapa",1 Calle 10-51 Zona 8,01,Guatemala,0104, San Miguel Petapa ,1,Urbana,,,8,4800,2023
+0104002,"Escuela Oficial Urbana Mixta No. 2, SAN MIGUEL PETAPA",3 Calle 12-72 Zona 2,01,GUATEMALA,0104,san miguel petapa,9,RURAL,14.687574,-89.930572,6,3600,2019
+0104003,"Escuela Oficial Rural Mixta No. 3,  San Miguel Petapa",7 Calle 15-79 Zona 12,01, Guatemala ,0104,San Miguel Petapa,12,,14.786732,-88.710268,11,6600,2023
+0105001,"Escuela Oficial Rural Mixta No. 1, amatitlán",4 Calle 4-38 Zona 2,01,guatemala,0105,Amatitlan,6,R,15.231024,-88.601544,13,9100,2023
+0105002,"Escuela Oficial Urbana Mixta No. 2, Amatitlán",8 Calle 2-14 Zona 6,01,Guatemala,0105,Amatitlán,SIN ZONA,rural,13.729482,-89.368636,12,0,2019
+0105003,"Colegio Municipal No. 3, Amatitlan",19 Calle 8-41 Zona 8,01,Guatemala,0105,AMATITLÁN,7,RURAL,14.578371,-91.670753,13,8450,2019
+0105004,"Escuela Oficial Urbana Mixta No. 4, Amatitlán",4 Calle 1-61 Zona 12,01,Guatemala,0105, Amatitlán ,6,URBANA,15.15262,-90.555591,13,8450,2019
+0301001,"Escuela Oficial Rural Mixta No. 1, ANTIGUA GUATEMALA",8 Calle 14-19 Zona 8,03,SACATEPÉQUEZ,0301,antigua guatemala,9,rural,14.274747,-91.466048,11,7150,2019
+0301002,"Instituto Nacional No. 2,  Antigua Guatemala",13 Calle 15-17 Zona 3,03, Sacatepéquez ,0301,Antigua Guatemala,7,urbana,14.381876,-90.257435,4,2400,2023
+0301003,"Colegio Municipal No. 3, antigua guatemala",16 Calle 3-34 Zona 5,03,sacatepéquez,0301,Antigua Guatemala,4,RURAL,"15,434331",-88.370729,10,6500,2023
+0302001,"Colegio Municipal No. 1, Jocotenango",6 Calle 1-75 Zona 2,03,Sacatepéquez,0302,Jocotenango,3,U,16.095128,-90.188598,3,1800,2023
+0302002,"Colegio Municipal No. 2, Jocotenango",8 Calle 10-86 Zona 1,03,Sacatepequez,0302,JOCOTENANGO,10,URBANA,15.35548,-88.433615,13,7800,2023
+0303001,"Escuela Oficial Rural Mixta No. 1, Sumpango",5 Calle 11-92 Zona 5,03,Sacatepéquez,0303, Sumpango ,,RURAL,16.636386,-91.245256,6,4200,2019
+0303002,"Escuela Oficial Urbana Mixta No. 2, SUMPANGO",18 Calle 4-74 Zona 5,03,SACATEPÉQUEZ,0303,sumpango,,urbana,,,10,7000,2019
+0303003,"Salon Comunal No. 3,  Sumpango",20 Calle 13-93 Zona 9,03, Sacatepéquez ,0303,Sumpango,SIN ZONA,rural,14.346762,-88.86502,8,5200,2023
+0303004,"Escuela Oficial Urbana Mixta No. 4, sumpango",4 Calle 12-80 Zona 3,03,sacatepéquez,0303,Sumpango,,RURAL,17.549613,-91.662836,13,7800,2023
+0501001,"Escuela Oficial Rural Mixta No. 1, Escuintla",9 Calle 15-16 Zona 2,05,Escuintla,0501,Escuintla,,U,16.300376,-91.144064,6,4200,2023
+0501002,"Salon Comunal No. 2, Escuintla",6 Calle 12-66 Zona 9,05,Escuintla,0501,ESCUINTLA,,urbana,16.861589,-89.651546,3,1950,2023
+0501003,"Instituto Nacional No. 3, Escuintla",18 Calle 1-57 Zona 10,05,Escuintla,0501, Escuintla ,9,urbana,17.574709,-89.435922,4,2400,2023
+0502001,"Escuela Oficial Urbana Mixta No. 1, SANTA LUCÍA COTZUMALGUAPA",12 Calle 4-97 Zona 4,05,ESCUINTLA,0502,santa lucía cotzumalguapa,11,urbana,17.385824,-89.015511,7,4550,2023
+0502002,"Instituto Nacional No. 2,  Santa Lucía Cotzumalguapa",6 Calle 15-62 Zona 1,05, Escuintla ,0502,Santa Lucía Cotzumalguapa,SIN ZONA,R,"14,333669",-88.480476,12,8400,2023
+0502003,"Escuela Oficial Urbana Mixta No. 3, santa lucía cotzumalguapa",13 Calle 14-14 Zona 8,05,escuintla,0502,Santa Lucia Cotzumalguapa,4,R,17.024072,-91.132777,13,0,2023
+0503001,"Salon Comunal No. 1, Tiquisate",9 Calle 14-18 Zona 5,05,Escuintla,0503,Tiquisate,SIN ZONA,RURAL,13.797024,-91.427481,6,3600,2023
+0503002,"Salon Comunal No. 2, Tiquisate",6 Calle 10-43 Zona 1,05,Escuintla,0503,TIQUISATE,SIN ZONA,R,15.057714,-92.089598,13,9100,2023
+0503003,"Escuela Oficial Urbana Mixta No. 3, Tiquisate",13 Calle 15-83 Zona 4,05,Escuintla,0503, Tiquisate ,5,U,15.489215,-88.263057,14,9100,2023
+0503004,"Instituto Nacional No. 4, TIQUISATE",12 Calle 7-18 Zona 11,05,ESCUINTLA,0503,tiquisate,SIN ZONA,R,17.494858,-90.046192,3,2100,2023
+0701001,"Salon Comunal No. 1,  Sololá",18 Calle 3-34 Zona 7,07, Sololá ,0701,Sololá,,RURAL,,,11,7150,2023
+0701002,"Escuela Oficial Urbana Mixta No. 2, sololá",10 Calle 5-36 Zona 7,07,sololá,0701,Solola,SIN ZONA,Urbana,14.933894,-90.008251,12,8400,2023
+0702001,"Instituto Nacional No. 1, Panajachel",3 Calle 5-75 Zona 11,07,Sololá,0702,Panajachel,SIN ZONA,,16.470072,-90.155304,10,6500,2023
+0702002,"Instituto Nacional No. 2, Panajachel",1 Calle 1-41 Zona 8,07,Solola,0702,PANAJACHEL,10,URBANA,14.97272,-88.973748,6,4200,2023
+0702003,"Escuela Oficial Rural Mixta No. 3, Panajachel",13 Calle 4-28 Zona 11,07,Sololá,0702, Panajachel ,12,R,14.497184,-89.414583,13,9100,2019
+0702004,"Escuela Oficial Rural Mixta No. 4, PANAJACHEL",2 Calle 9-41 Zona 2,07,SOLOLÁ,0702,panajachel,8,R,"16,99685",-89.416353,6,3600,2023
+0703001,"Colegio Municipal No. 1,  Santiago Atitlan",15 Calle 15-30 Zona 12,07, Sololá ,0703,Santiago Atitlan,,,17.357283,-90.493037,12,8400,2023
+0703002,"Instituto Nacional No. 2, santiago atitlan",9 Calle 8-19 Zona 12,07,sololá,0703,Santiago Atitlan,5,rural,16.839836,-90.114801,13,8450,2023
+0703003,"Escuela Oficial Rural Mixta No. 3, Santiago Atitlan",5 Calle 12-37 Zona 2,07,Sololá,0703,Santiago Atitlan,,U,14.030368,-91.596677,8,5600,2023
+0703004,"Colegio Municipal No. 4, Santiago Atitlan",1 Calle 14-83 Zona 7,07,Solola,0703,SANTIAGO ATITLAN,8,,14.548021,-90.519426,9,5400,2023
+0901001,"Colegio Municipal No. 1, Quetzaltenango",8 Calle 8-38 Zona 5,09,Quetzaltenango,0901, Quetzaltenango ,,R,16.764814,-90.015471,9,6300,2019
+0901002,"Instituto Nacional No. 2, QUETZALTENANGO",15 Calle 15-26 Zona 10,09,QUETZALTENANGO,0901,quetzaltenango,9,R,16.484482,-90.582733,8,5600,2023
+0901003,"Instituto Nacional No. 3,  Quetzaltenango",2 Calle 5-58 Zona 6,09, Quetzaltenango ,0901,Quetzaltenango,,urbana,15.457312,-88.732595,4,0,2023
+0901004,"Salon Comunal No. 4, quetzaltenango",3 Calle 8-12 Zona 12,09,quetzaltenango,0901,Quetzaltenango,9,U,,,9,5850,2023
+0902001,"Instituto Nacional No. 1, Coatepeque",1 Calle 10-29 Zona 4,09,Quetzaltenango,0902,Coatepeque,,URBANA,16.792356,-88.401553,13,7800,2023
+0902002,"Salon Comunal No. 2, Coatepeque",6 Calle 10-87 Zona 12,09,Quetzaltenango,0902,COATEPEQUE,12,URBANA,15.606639,-91.175025,12,7200,2019
+0902003,"Escuela Oficial Rural Mixta No. 3, Coatepeque",13 Calle 12-35 Zona 2,09,Quetzaltenango,0902, Coatepeque ,SIN ZONA,RURAL,"13,805282",-90.952171,4,2800,2023
+0903001,"Escuela Oficial Urbana Mixta No. 1, SALCAJÁ",19 Calle 13-15 Zona 6,09,QUETZALTENANGO,0903,salcajá,,URBANA,17.186202,-89.798354,14,9100,2023
+0903002,"Escuela Oficial Rural Mixta No. 2,  Salcajá",16 Calle 2-65 Zona 6,09, Quetzaltenango ,0903,Salcajá,,U,16.354927,-92.149391,4,2800,2023
+0903003,"Salon Comunal No. 3, salcajá",20 Calle 13-78 Zona 8,09,quetzaltenango,0903,Salcaja,,Urbana,16.708561,-88.338105,9,5400,2023
+1201001,"Escuela Oficial Rural Mixta No. 1, San Marcos",19 Calle 10-95 Zona 7,12,San Marcos,1201,San Marcos,6,U,14.843606,-90.396792,6,3600,2023
+1201002,"Salon Comunal No. 2, San Marcos",9 Calle 15-86 Zona 12,12,San Marcos,1201,SAN MARCOS,SIN ZONA,U,14.569691,-89.008671,5,3250,2019
+1201003,"Instituto Nacional No. 3, San Marcos",16 Calle 11-72 Zona 8,12,San Marcos,1201, San Marcos ,1,rural,16.652306,-90.245689,4,2400,2023
+1201004,"Salon Comunal No. 4, SAN MARCOS",16 Calle 9-77 Zona 6,12,SAN MARCOS,1201,san marcos,SIN ZONA,rural,14.697551,-89.54416,9,6300,2023
+1202001,"Escuela Oficial Urbana Mixta No. 1,  Malacatán",7 Calle 6-25 Zona 12,12, San Marcos ,1202,Malacatán,SIN ZONA,U,14.810757,-91.194385,14,9100,2019
+1202002,"Colegio Municipal No. 2, malacatán",20 Calle 5-22 Zona 4,12,san marcos,1202,Malacatan,5,rural,15.685214,-89.30166,6,4200,2023
+1202003,"Escuela Oficial Urbana Mixta No. 3, Malacatán",2 Calle 9-47 Zona 12,12,San Marcos,1202,Malacatán,SIN ZONA,Urbana,,,7,4200,2023
+1202004,"Salon Comunal No. 4, Malacatan",6 Calle 1-42 Zona 8,12,San Marcos,1202,MALACATÁN,2,URBANA,"14,865791",-90.285143,3,2100,2023
+1203001,"Colegio Municipal No. 1, Tacaná",10 Calle 2-41 Zona 2,12,San Marcos,1203, Tacaná ,,URBANA,16.514449,-91.593092,12,8400,2023
+1203002,"Colegio Municipal No. 2, TACANÁ",14 Calle 5-82 Zona 10,12,SAN MARCOS,1203,tacaná,SIN ZONA,rural,15.547109,-90.429116,11,0,2023
+1203003,"Instituto Nacional No. 3,  Tacaná",8 Calle 3-80 Zona 2,12, San Marcos ,1203,Tacaná,3,URBANA,14.565203,-89.558287,6,4200,2023
+1203004,"Salon Comunal No. 4, tacaná",10 Calle 12-68 Zona 2,12,san marcos,1203,Tacana,11,,15.626641,-92.069441,14,9800,2023
+1203005,"Salon Comunal No. 5, Tacaná",5 Calle 2-17 Zona 3,12,San Marcos,1203,Tacaná,SIN ZONA,rural,15.932706,-89.609461,9,5400,2023
+1601001,"Salon Comunal No. 1, Coban",17 Calle 9-73 Zona 8,16,Alta Verapaz,1601,COBÁN,SIN ZONA,,16.52358,-89.401065,4,2600,2019
+1601002,"Instituto Nacional No. 2, Cobán",19 Calle 10-12 Zona 11,16,Alta Verapaz,1601, Cobán ,SIN ZONA,R,16.175226,-92.09654,14,9100,2019
+1601003,"Instituto Nacional No. 3, COBÁN",19 Calle 7-91 Zona 8,16,ALTA VERAPAZ,1601,cobán,,Urbana,16.371189,-88.535709,10,7000,2023
+1601004,"Salon Comunal No. 4,  Cobán",14 Calle 12-73 Zona 5,16, Alta Verapaz ,1601,Cobán,,R,16.447547,-88.769068,8,5200,2023
+1602001,"Escuela Oficial Rural Mixta No. 1, san pedro carchá",17 Calle 14-10 Zona 11,16,alta verapaz,1602,San Pedro Carcha,,,14.734835,-91.736314,4,2600,2023
+1602002,"Escuela Oficial Rural Mixta No. 2, San Pedro Carchá",2 Calle 4-44 Zona 9,16,Alta Verapaz,1602,San Pedro Carchá,,urbana,"15,183295",-89.174227,6,4200,2023
+1603001,"Instituto Nacional No. 1, Chisec",10 Calle 9-11 Zona 9,16,Alta Verapaz,1603,CHISEC,7,URBANA,,,3,2100,2019
+1603002,"Salon Comunal No. 2, Chisec",17 Calle 12-44 Zona 7,16,Alta Verapaz,1603, Chisec ,,URBANA,16.35561,-91.584116,10,6000,2019
+1603003,"Colegio Municipal No. 3, CHISEC",5 Calle 14-18 Zona 5,16,ALTA VERAPAZ,1603,chisec,,,15.272703,-88.512527,11,6600,2023
+1603004,"Colegio Municipal No. 4,  Chisec",16 Calle 14-29 Zona 8,16, Alta Verapaz ,1603,Chisec,,RURAL,16.676809,-88.850096,3,1950,2023
+1603005,"Instituto Nacional No. 5, chisec",8 Calle 10-59 Zona 4,16,alta verapaz,1603,Chisec,7,U,15.246561,-88.468591,11,7700,2023
+1701001,"Instituto Nacional No. 1, Flores",16 Calle 1-26 Zona 9,17,Petén,1701,Flores,,R,16.948814,-89.591924,9,6300,2019
+1701002,"Instituto Nacional No. 2, Flores",14 Calle 14-93 Zona 3,17,Peten,1701,FLORES,,,17.432811,-92.13861,4,2800,2023
+1701003,"Salon Comunal No. 3, Flores",18 Calle 7-50 Zona 11,17,Petén,1701, Flores ,,U,15.329682,-91.878739,12,0,2023
+1701004,"Salon Comunal No. 4, FLORES",8 Calle 12-21 Zona 7,17,PETÉN,1701,flores,SIN ZONA,urbana,14.662558,-89.462402,12,7200,2023
+1701005,"Escuela Oficial Urbana Mixta No. 5,  Flores",11 Calle 13-17 Zona 5,17, Petén ,1701,Flores,,URBANA,16.545405,-88.586304,10,6000,2023
+1702001,"Instituto Nacional No. 1, san benito",6 Calle 2-88 Zona 7,17,petén,1702,San Benito,SIN ZONA,rural,"16,020305",-89.029922,11,7150,2019
+1702002,"Escuela Oficial Rural Mixta No. 2, San Benito",9 Calle 11-11 Zona 8,17,Petén,1702,San Benito,SIN ZONA,,14.651973,-89.648381,12,7200,2023
+1702003,"Salon Comunal No. 3, San Benito",14 Calle 12-42 Zona 8,17,Peten,1702,SAN BENITO,5,Urbana,17.575466,-88.249393,4,2600,2023
+1703001,"Salon Comunal No. 1, La Libertad",1 Calle 14-94 Zona 7,17,Petén,1703, La Libertad ,5,URBANA,,,6,3900,2023
+1703002,"Salon Comunal No. 2, LA LIBERTAD",8 Calle 10-55 Zona 4,17,PETÉN,1703,la libertad,11,urbana,15.736582,-88.583379,12,8400,2023
+1703003,"Instituto Nacional No. 3,  La Libertad",4 Calle 15-90 Zona 11,17, Petén ,1703,La Libertad,,RURAL,16.84663,-89.47658,13,9100,2023
+1703004,"Salon Comunal No. 4, la libertad",11 Calle 12-63 Zona 3,17,petén,1703,La Libertad,4,urbana,16.702675,-91.839466,12,7800,2023
+1703005,"Salon Comunal No. 5, La Libertad",16 Calle 13-47 Zona 12,17,Petén,1703,La Libertad,6,U,17.445297,-88.87811,11,7700,2023
+0102004,"Escuela Oficial Urbana Mixta No. 4, Mixco",20 Calle 11-31 Zona 9,01,Guatemala,0102,MIXCO,12,U,15.15661,-89.519299,5,3250,2019
+0104001,"COLEGIO MUNICIPAL NO. 1, SAN MIGUEL PETAPA",1 Calle 10-51 Zona 8,01,Guatemala,0104, San Miguel Petapa ,1,Urbana,,,9,4800,2023
+9999999,"Instituto Nacional No. 2,  Antigua Guatemala",13 Calle 15-17 Zona 3,99,DEPARTAMENTO DESCONOCIDO,9999,Antigua Guatemala,7,urbana,14.381876,-90.257435,4,2400,2023
