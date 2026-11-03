@@ -1,0 +1,3 @@
+-r requirements.txt
+prefect==3.9.1
+tzdata==2026.2

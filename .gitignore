@@ -10,3 +10,7 @@ logs/
 .DS_Store
 .idea/
 .vscode/
+
+output/
+.tools/
+.coverage
