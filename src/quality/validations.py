@@ -1,9 +1,10 @@
-"""Validaciones de calidad de datos.  [TEMPLATE — completar]
+"""Resultado y validador genérico. Las reglas electorales están en business.py.
 
 Un registro que no pasa una validación NO debe romper la ejecución en
 silencio. Decide qué haces con él (cuarentena, descarte con log, o fallo
 del flujo) y documenta el criterio.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field

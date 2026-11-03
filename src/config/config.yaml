@@ -1,33 +1,148 @@
-# ---------------------------------------------------------------------------
-# Configuración de las fuentes y los flujos.
-# La idea del template es que agregar una fuente nueva sea agregar un bloque
-# aquí, no reescribir código. Puedes extender esta estructura.
-# ---------------------------------------------------------------------------
 paths:
   historico: data/historico
   empadronados: data/empadronados
-
 sources:
   centros_votacion:
     type: csv
     path: data/historico/centros_votacion.csv
-    load_mode: full          # carga única
+    load_mode: full
     target_table: electoral.centros_votacion
-    natural_key: [codigo_centro_votacion]
-
+    natural_key:
+    - codigo_centro_votacion
+    columns:
+    - codigo_centro_votacion
+    - nombre_centro
+    - direccion
+    - codigo_departamento
+    - nombre_departamento
+    - codigo_municipio
+    - nombre_municipio
+    - zona
+    - area
+    - latitud
+    - longitud
+    - cantidad_mesas
+    - capacidad_maxima
+    - anio_vigencia
+    text_fields:
+    - nombre_centro
+    - direccion
+    - nombre_departamento
+    - nombre_municipio
+    numeric_fields:
+    - cantidad_mesas
+    - capacidad_maxima
+    - anio_vigencia
+    - latitud
+    - longitud
+    decimal_fields:
+    - latitud
+    - longitud
+    date_fields: []
+    requires_catalog: false
+    timestamp_column: fechacarga
   resultados_historicos:
     type: csv
     path: data/historico/resultados_historicos.csv
-    load_mode: full          # carga única
+    load_mode: full
     target_table: electoral.resultados_elecciones
-    natural_key: [anio_eleccion, tipo_eleccion, vuelta, codigo_mesa, partido]
-
+    natural_key:
+    - anio_eleccion
+    - tipo_eleccion
+    - vuelta
+    - codigo_mesa
+    - partido
+    columns:
+    - anio_eleccion
+    - tipo_eleccion
+    - vuelta
+    - codigo_departamento
+    - codigo_municipio
+    - codigo_centro_votacion
+    - codigo_mesa
+    - partido
+    - candidato
+    - votos_validos
+    - votos_nulos
+    - votos_en_blanco
+    - total_empadronados_mesa
+    - total_votantes_mesa
+    text_fields:
+    - candidato
+    numeric_fields:
+    - anio_eleccion
+    - vuelta
+    - votos_validos
+    - votos_nulos
+    - votos_en_blanco
+    - total_empadronados_mesa
+    - total_votantes_mesa
+    decimal_fields: []
+    date_fields: []
+    requires_catalog: true
+    timestamp_column: fechacarga
   empadronados:
     type: csv
     path_pattern: data/empadronados/empadronados_{fecha}.csv
-    load_mode: incremental   # actualización diaria
+    load_mode: incremental
     target_table: electoral.empadronados
-    natural_key: [id_empadronado]
-
+    natural_key:
+    - id_empadronado
+    columns:
+    - id_empadronado
+    - codigo_centro_votacion
+    - codigo_mesa
+    - rango_edad
+    - sexo
+    - codigo_departamento_residencia
+    - codigo_municipio_residencia
+    - estado_registro
+    - fecha_inscripcion
+    - fecha_ultima_actualizacion
+    text_fields: []
+    numeric_fields: []
+    decimal_fields: []
+    date_fields:
+    - fecha_inscripcion
+    - fecha_ultima_actualizacion
+    requires_catalog: true
+    timestamp_column: null
 quality:
-  on_reject: quarantine      # quarantine | fail | skip  (decisión del candidato)
+  on_reject: quarantine
+categories:
+  area:
+    U: urbana
+    URBANA: urbana
+    R: rural
+    RURAL: rural
+  sexo:
+    M: M
+    MASCULINO: M
+    F: F
+    FEMENINO: F
+  estado_registro:
+    ACTIVO: activo
+    SUSPENDIDO: suspendido
+    FALLECIDO: fallecido
+  rango_edad:
+    18 a 25: 18-25
+    26 a 35: 26-35
+    mayor de 60: 61+
+    18-25: 18-25
+    26-35: 26-35
+    36-45: 36-45
+    46-60: 46-60
+    61+: 61+
+  partido:
+    U.N.E.: UNE
+    UNE: UNE
+  tipo_eleccion:
+    PRESIDENCIAL: presidencial
+    LEGISLATIVA: legislativa
+    MUNICIPAL: municipal
+orchestration:
+  timezone: America/Guatemala
+  hour: 2
+  minute: 0
+  retries: 3
+  retry_delay_seconds: 30

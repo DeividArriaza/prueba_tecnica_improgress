@@ -3,6 +3,7 @@
 Los transformers deben ser componibles: la salida de uno es la entrada del
 siguiente. Deben ser funciones puras siempre que se pueda (facilita probarlos).
 """
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod

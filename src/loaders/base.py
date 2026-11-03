@@ -4,6 +4,7 @@ Dos modos que la prueba pide distinguir explícitamente:
   - FullLoader        -> data histórica, se carga una sola vez, idempotente
   - IncrementalLoader -> padrón, actualización diaria (altas, cambios, bajas)
 """
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -11,11 +12,12 @@ from typing import Iterable
 
 
 class BaseLoader(ABC):
-    def __init__(self, table: str, natural_key: list[str]) -> None:
-        self.table = table
-        self.natural_key = natural_key
+    """El contexto de escritura pertenece al store y se comparte con la auditoría."""
+
+    def __init__(self) -> None:
+        self.metrics: dict[str, int] = {}
 
     @abstractmethod
-    def load(self, records: Iterable[dict]) -> int:
-        """Carga los registros y devuelve la cantidad afectada."""
+    def load(self, records: Iterable[dict], *, conn=None) -> int:
+        """Devuelve afectadas y publica insertadas/actualizadas/sin_cambios en metrics."""
         raise NotImplementedError

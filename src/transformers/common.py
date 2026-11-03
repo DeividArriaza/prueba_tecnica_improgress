@@ -1,81 +1,135 @@
-"""Transformaciones reutilizables.  [TEMPLATE — completar]
+"""Transformaciones puras; los errores de celda viajan hacia cuarentena."""
 
-Estas son las piezas donde se concentra el trabajo real de la prueba.
-Los datos de origen traen inconsistencias reales: acentos, mayúsculas,
-espacios, decimales con coma, separadores de miles, fechas en dos formatos,
-valores categóricos no estandarizados, duplicados y llaves huérfanas.
-"""
-from __future__ import annotations
-
-from typing import Iterable
-
+from collections import defaultdict
+from datetime import datetime
+from decimal import Decimal, InvalidOperation
+import re
+import unicodedata
 from src.transformers.base import BaseTransformer
 
 
-class TrimStrings(BaseTransformer):
-    """Ejemplo de referencia ya implementado: recorta espacios."""
+def canonical(value):
+    text = unicodedata.normalize("NFKD", str(value or ""))
+    return " ".join(
+        "".join(c for c in text if not unicodedata.combining(c)).upper().split()
+    )
 
-    def transform(self, records: Iterable[dict]) -> Iterable[dict]:
-        for r in records:
-            yield {k: (v.strip() if isinstance(v, str) else v) for k, v in r.items()}
+
+def error(row, reason):
+    row.setdefault("_errors", []).append(reason)
+
+
+class TrimStrings(BaseTransformer):
+    def transform(self, records):
+        for row in records:
+            yield {
+                k: (v.strip() or None) if isinstance(v, str) else v
+                for k, v in row.items()
+            }
 
 
 class NormalizeText(BaseTransformer):
-    """Estandariza nombres de departamento / municipio / centro.
-
-    TODO: decidir la forma canónica (¿se conservan acentos? ¿title case?) y
-    aplicarla de forma consistente en todas las fuentes.
-    """
-
-    def __init__(self, fields: list[str]) -> None:
+    def __init__(self, fields):
         self.fields = fields
 
-    def transform(self, records: Iterable[dict]) -> Iterable[dict]:
-        raise NotImplementedError("TODO: implementar")
+    def transform(self, records):
+        for source in records:
+            row = dict(source)
+            for field in self.fields:
+                if row.get(field) is not None:
+                    row[field] = canonical(row[field])
+            yield row
 
 
 class CastNumeric(BaseTransformer):
-    """Convierte columnas numéricas que vienen como texto.
+    """El formato depende de la columna, no de adivinar el valor."""
 
-    TODO: manejar vacíos, negativos, separadores de miles y coma decimal.
-    """
-
-    def __init__(self, fields: list[str]) -> None:
+    def __init__(self, fields, decimal_fields=()):
         self.fields = fields
+        self.decimal_fields = set(decimal_fields)
 
-    def transform(self, records: Iterable[dict]) -> Iterable[dict]:
-        raise NotImplementedError("TODO: implementar")
+    def transform(self, records):
+        for source in records:
+            row = dict(source)
+            for field in self.fields:
+                value = row.get(field)
+                if value is None:
+                    continue
+                try:
+                    text = str(value).strip()
+                    if field in self.decimal_fields:
+                        if not re.fullmatch(r"[+-]?\d+(?:[.,]\d+)?", text):
+                            raise ValueError()
+                        number = Decimal(text.replace(",", "."))
+                        row[field] = format(number, "f")
+                    else:
+                        if not re.fullmatch(r"[+-]?(?:\d+|\d{1,3}(?:,\d{3})+)", text):
+                            raise ValueError()
+                        row[field] = int(text.replace(",", ""))
+                except (ValueError, InvalidOperation):
+                    error(row, f"numero_invalido:{field}")
+            yield row
 
 
 class ParseDates(BaseTransformer):
-    """Convierte fechas en formato mixto (YYYY-MM-DD y DD/MM/YYYY)."""
-
-    def __init__(self, fields: list[str]) -> None:
+    def __init__(self, fields):
         self.fields = fields
 
-    def transform(self, records: Iterable[dict]) -> Iterable[dict]:
-        raise NotImplementedError("TODO: implementar")
+    def transform(self, records):
+        for source in records:
+            row = dict(source)
+            for field in self.fields:
+                if row.get(field) is None:
+                    continue
+                for fmt in ("%Y-%m-%d", "%d/%m/%Y"):
+                    try:
+                        row[field] = (
+                            datetime.strptime(str(row[field]), fmt).date().isoformat()
+                        )
+                        break
+                    except ValueError:
+                        pass
+                else:
+                    error(row, f"fecha_invalida:{field}")
+            yield row
 
 
 class StandardizeCategories(BaseTransformer):
-    """Estandariza valores categóricos: area, sexo, estado_registro, partido."""
+    def __init__(self, mapping):
+        self.mapping = {
+            f: {canonical(k): v for k, v in m.items()} for f, m in mapping.items()
+        }
 
-    def __init__(self, mapping: dict[str, dict[str, str]]) -> None:
-        self.mapping = mapping
-
-    def transform(self, records: Iterable[dict]) -> Iterable[dict]:
-        raise NotImplementedError("TODO: implementar")
+    def transform(self, records):
+        for source in records:
+            row = dict(source)
+            for field, mapping in self.mapping.items():
+                if row.get(field) is not None:
+                    value = canonical(row[field])
+                    row[field] = mapping.get(value, value)
+            yield row
 
 
 class Deduplicate(BaseTransformer):
-    """Elimina duplicados según la llave natural.
+    """No elige un ganador arbitrario cuando hay informaci?n contradictoria."""
 
-    TODO: definir el criterio de sobrevivencia cuando dos filas comparten la
-    llave pero difieren en el resto de columnas. Documentarlo.
-    """
-
-    def __init__(self, key: list[str]) -> None:
+    def __init__(self, key):
         self.key = key
 
-    def transform(self, records: Iterable[dict]) -> Iterable[dict]:
-        raise NotImplementedError("TODO: implementar")
+    def transform(self, records):
+        groups = defaultdict(list)
+        for row in records:
+            groups[tuple(row.get(k) for k in self.key)].append(row)
+        for rows in groups.values():
+
+            def business(row):
+                return {k: v for k, v in row.items() if not k.startswith("_")}
+
+            conflict = any(business(row) != business(rows[0]) for row in rows[1:])
+            for i, source in enumerate(rows):
+                row = dict(source)
+                if conflict:
+                    error(row, "duplicado_conflictivo")
+                elif i:
+                    row["_duplicate"] = True
+                yield row

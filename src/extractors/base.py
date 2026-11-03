@@ -4,6 +4,7 @@ Un extractor sabe LEER de una fuente y nada más: no transforma ni carga.
 Agregar una fuente nueva (API, base de datos, parquet) debe ser crear una
 subclase, no modificar el pipeline.
 """
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -21,6 +22,7 @@ class BaseExtractor(ABC):
         """Devuelve los registros crudos de la fuente, sin transformar."""
         raise NotImplementedError
 
+    @abstractmethod
     def metadata(self) -> dict:
-        """Información de la ejecución (origen, filas leídas, etc.)."""
+        """Incluye sha256 del contenido consumido; invocar después de extract()."""
         return {"extractor": type(self).__name__, "options": self.options}

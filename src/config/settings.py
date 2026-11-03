@@ -2,6 +2,7 @@
 
 Las credenciales se leen de variables de entorno (.env), nunca del YAML.
 """
+
 from __future__ import annotations
 
 import os
@@ -11,9 +12,8 @@ from pathlib import Path
 import yaml
 from dotenv import load_dotenv
 
-load_dotenv()
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+load_dotenv(PROJECT_ROOT / ".env")
 CONFIG_PATH = Path(__file__).with_name("config.yaml")
 
 
@@ -38,7 +38,10 @@ class DBSettings:
 
 def load_config(path: Path | None = None) -> dict:
     with open(path or CONFIG_PATH, "r", encoding="utf-8") as fh:
-        return yaml.safe_load(fh)
+        config = yaml.safe_load(fh)
+    if config.get("quality", {}).get("on_reject", "quarantine") != "quarantine":
+        raise ValueError("quality.on_reject solo admite quarantine en esta versión")
+    return config
 
 
 def source_config(name: str) -> dict:

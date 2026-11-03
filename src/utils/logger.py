@@ -1,8 +1,5 @@
-"""Configuración central de logging.
+"""Logging por módulo; Pipeline emite métricas estructuradas en JSON."""
 
-TODO (candidato): decide si necesitas logging estructurado y qué métricas de
-ejecución quieres emitir (filas leídas / cargadas / rechazadas).
-"""
 from __future__ import annotations
 
 import logging
